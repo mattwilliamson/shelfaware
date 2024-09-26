@@ -9,5 +9,8 @@
 *.json filter=lfs diff=lfs merge=lfs -text
 *.ipynb filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
+*.ini filter=lfs diff=lfs merge=lfs -text
+/migrations/README filter=lfs diff=lfs merge=lfs -text
+*.mako filter=lfs diff=lfs merge=lfs -text
 * !text !filter !merge !diff
 models/*.pt filter=lfs diff=lfs merge=lfs -text
