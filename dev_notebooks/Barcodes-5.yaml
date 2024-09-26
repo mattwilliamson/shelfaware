@@ -1,0 +1,13 @@
+names:
+- Barcode
+- QR Code
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: barcodes-zmxjq
+  url: https://universe.roboflow.com/labeler-projects/barcodes-zmxjq/dataset/5
+  version: 5
+  workspace: labeler-projects
+test: ../Barcodes-5/test/images
+train: ../Barcodes-5/train/images
+val: ../Barcodes-5/valid/images

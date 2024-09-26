@@ -1,0 +1,12 @@
+names:
+- receipt
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: receiptextractoris
+  url: https://universe.roboflow.com/ilai-k-pp5lo/receiptextractoris/dataset/1
+  version: 1
+  workspace: ilai-k-pp5lo
+test: ../ReceiptExtractorIS-1/test/images
+train: ../ReceiptExtractorIS-1/train/images
+val: ../ReceiptExtractorIS-1/valid/images
