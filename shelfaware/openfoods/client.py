@@ -65,8 +65,11 @@ class OpenFoodClient:
         
         Args:
             product (FoodProduct): The product object with an image URL.
+            
+        Returns:
+            Image: A PIL Image object of the product's image.
         """
         if product.image_url:
             response = self.session.get(product.image_url)
             img = Image.open(BytesIO(response.content))
-            img.show()
+            return img

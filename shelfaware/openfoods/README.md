@@ -30,5 +30,5 @@ if product:
 ## Testing
 
 ```sh
-python -m unittest discover openfoods/tests
+python -m unittest discover shelfaware/openfoods/tests
 ```

@@ -2,3 +2,6 @@ requests
 requests_cache
 Pillow
 matplotlib
+pyzbar
+opencv-python
+ultralytics
