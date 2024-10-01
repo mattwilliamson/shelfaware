@@ -5,6 +5,17 @@
 
 ## Running
 
+### Check out code
+
+For the pretrained models, make sure to [install git-lfs](https://github.com/git-lfs/git-lfs/blob/main/INSTALLING.md)
+
+```sh
+git clone https://github.com/mattwilliamson/shelfaware.git
+cd shelfaware
+git lfs install
+git lfs fetch --all
+```
+
 ### Docker-compose
 
 ```sh
