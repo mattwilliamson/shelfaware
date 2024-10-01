@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./shelfaware
+      dockerfile: Dockerfile  # Dockerfile for FastAPI backend
+    container_name: fastapi_backend
+    ports:
+      - "8000:8000"  # Expose FastAPI on port 8000
+    environment:
+      - FASTAPI_HOST=0.0.0.0
+      - FASTAPI_PORT=8000
+      - FRONTEND_URL=http://localhost:3000
+    volumes:
+      - .:/app  # Mount the app source code for development
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend  # Dockerfile for React frontend
+    container_name: react_frontend
+    ports:
+      - "3000:3000"  # Expose React on port 3000
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app  # Mount the frontend source code for development

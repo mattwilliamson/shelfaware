@@ -5,15 +5,75 @@
 
 ## Running
 
-export OPENAI_BASE_URL=http://hugger:8000/v1
+### Docker-compose
+
+```sh
+sudo apt install docker-compose
+
+docker-compose up --build
+```
+
+```sh
+docker-compose down
+```
 
 ### Install dependencies
 ```sh
 conda create -n shelfaware python=3.10
 conda activate shelfaware
 
-pip3 install -e .
+pip install -e .
 ```
+
+### Update requirements.txt
+
+```sh
+pip freeze > requirements.txt
+```
+
+### Testing
+
+```sh
+python -m unittest discover -s shelfaware
+```
+
+## Backend FastAPI
+
+```sh
+# Set host and port if necessary
+export SHELFWARE_HOST=0.0.0.0
+export SHELFAWARE_PORT=8000
+export SHELFAWARE_FRONTEND_URL=http://0.0.0.0:3000
+
+uvicorn shelfaware.server.main:app --reload
+```
+
+## Frontend React App
+
+```sh
+sudo apt install npm
+npm install -g n
+sudo n stable
+```
+
+Create a .env file for react to change the host/port:
+
+```sh
+echo REACT_APP_API_URL=http://0.0.0.0:3000 >> frontend/.env
+```
+
+```sh
+cd frontend
+npm install
+npm start
+```
+
+
+---
+
+## Running
+
+export OPENAI_BASE_URL=http://hugger:8000/v1
 
 ### Run NIM Service for LLM
 
@@ -136,13 +196,3 @@ Instrumentation:
 OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED
 
 
----
-
-from openfoods.client import OpenFoodClient
-
-client = OpenFoodClient()
-product = client.fetch_product("4099100207149")
-
-if product:
-    print(product.product_name)
-    client.fetch_image(product)

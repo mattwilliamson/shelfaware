@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "shelfaware"
+version = "0.1.0"
+description = "Backend for shelfaware meal planning and grocery inventory assistant"
+authors = ["Matt Williamson <matt@aimatt.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.0"
+fastapi-cors = "^0.0.6"
+uvicorn = "^0.30.6"
+requests = "^2.32.3"
+requests-cache = "^1.2.1"
+matplotlib = "^3.9.2"
+SQLAlchemy = "^2.0.35"
+alembic = "^1.13.3"
+pydantic = "^2.9.2"
+ultralytics = "^8.2.102"
+# Pillow-PIL = "^0.1dev"
+pillow = "^10.4.0"
+opencv-python = "^4.10.0"
+pyzbar = "^0.1.9"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
