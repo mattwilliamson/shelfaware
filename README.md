@@ -32,8 +32,8 @@ docker-compose down
 ```sh
 conda create -n shelfaware python=3.10
 conda activate shelfaware
-
-pip install -e .
+# pip install poetry
+pip install -e shelfaware
 ```
 
 ### Update requirements.txt
